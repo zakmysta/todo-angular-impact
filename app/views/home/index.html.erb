@@ -1,0 +1,9 @@
+<h1>Todos</h1>
+<form id="new_todo" ng-submit="addTodo()">
+  <input type="text" id="todoDescription" autofocus="autofocus" placeholder="Todo description" maxlength="255" ng-model="taskDescription" />
+  <button>Add</button>
+</form>
+
+<ul id="todo-list">
+  <li ng-repeat="todo in todos">{{todo.description}}</li>
+</ul>

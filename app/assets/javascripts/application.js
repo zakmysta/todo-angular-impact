@@ -15,4 +15,6 @@
 //= require turbolinks
 //= require angular
 //= require angular-resource
+//= require angular-route
+//= require todosApp
 //= require_tree .
