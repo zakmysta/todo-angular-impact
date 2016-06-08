@@ -1,9 +1,9 @@
-angular.module('todosApp').controller "TodosController", ($scope, $timeout, $routeParams, Todo) ->
+angular.module('todosApp').controller "TodosController", ($scope, Todo) ->
 
   $scope.init = () ->
     @todoService = new Todo(serverErrorHandler)
 
-    $scope.todos = @todoService.all
+    $scope.todos = @todoService.all()
 
   $scope.addTodo = ->
     todo = @todoService.create(description: $scope.todoDescription)

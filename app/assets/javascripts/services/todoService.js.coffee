@@ -1,11 +1,11 @@
-angular.module('todosApp').factory 'Todo', ($resource, $http) ->
+angular.module('todosApp').factory 'Todo', ($resource) ->
   class Todo
-    constructor: (taskListId, errorHandler) ->
+    constructor: (errorHandler) ->
       @service = $resource('/api/todos/:id', {id: '@id'})
       @errorHandler = errorHandler
 
     create: (attrs) ->
-      new @service(task: attrs).$save ((task) -> attrs.id = task.id), @errorHandler
+      new @service(todo: attrs).$save ((todo) -> attrs.id = todo.id), @errorHandler
       attrs
 
     all: ->
